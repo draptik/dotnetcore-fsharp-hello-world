@@ -72,7 +72,7 @@ Before this works with the previously created task, you have to update the execu
     <Compile Include="Program.fs" />
   </ItemGroup>
 ```
-Now, pressing `Ctrl+Shift+p`, selecting `Run Task`, then selecting `Testing` should run tests (no tests present yet).
+Now, pressing `Ctrl+Shift+p`, selecting `Run Task`, then selecting `Testing` should run tests.
 
 #### FsUnit.XUnit
 
@@ -112,6 +112,24 @@ Patching `*fsproj`:
     <Compile Include="Program.fs" />
   </ItemGroup>
   ```
+Output from the command line should look like this:
+
+```sh
+dotnet xunit
+Detecting target frameworks in fsharp-hwapp.fsproj...
+Building for framework netcoreapp2.0...
+  fsharp-hwapp -> /home/patrick/projects/dotnet-core-helloworld/fsharp-hwapp/bin/Debug/netcoreapp2.0/fsharp-hwapp.dll
+Running .NET Core tests for framework netcoreapp2.0...
+xUnit.net Console Runner (64-bit .NET Core 4.6.00001.0)
+  Discovering: fsharp-hwapp
+  Discovered:  fsharp-hwapp
+  Starting:    fsharp-hwapp
+  Finished:    fsharp-hwapp
+=== TEST EXECUTION SUMMARY ===
+   fsharp-hwapp  Total: 6, Errors: 0, Failed: 0, Skipped: 0, Time: 0.430s
+```
+
+The output from VS Code should look the same.
 
 # Versions
 
