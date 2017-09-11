@@ -141,12 +141,30 @@ Microsoft .NET Core Shared Framework Host
 ## Ubuntu (16.04)
 
 ```
+dotnet --info
+.NET Command Line Tools (2.0.0)
+
+Product Information:
+ Version:            2.0.0
+ Commit SHA-1 hash:  cdcd1928c9
+
+Runtime Environment:
+ OS Name:     ubuntu
+ OS Version:  16.04
+ OS Platform: Linux
+ RID:         ubuntu.16.04-x64
+ Base Path:   /usr/share/dotnet/sdk/2.0.0/
+
+Microsoft .NET Core Shared Framework Host
+
+  Version  : 2.0.0
+  Build    : e8b8861ac7faf042c87a5c2f9f2d04c98b69f28d
 ```
 
 ## Windows 10
 
- ```
-$ dotnet --info
+```
+dotnet --info
 .NET Command Line Tools (2.0.0)
 
 Product Information:
