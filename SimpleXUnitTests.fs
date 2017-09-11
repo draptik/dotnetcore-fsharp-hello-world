@@ -13,3 +13,7 @@ let TrueIsTrue() =
 let AddShouldWorkForSimpleExample() =
     Assert.Equal(add 1 1, 2)
 
+
+[<Fact>]
+let ``Add should work for simple example``() =
+    Assert.Equal(add 1 1, 2)

@@ -12,3 +12,7 @@ let TrueIsTrue() =
 let AddShouldWorkForSimpleExample() =
     add 1 1 |> should equal 2
 
+[<Fact>]
+let ``Add should work for simple example``() =
+    add 1 1 |> should equal 2
+
