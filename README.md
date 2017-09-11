@@ -74,3 +74,43 @@ Before this works with the previously created task, you have to update the execu
 ```
 Now, pressing `Ctrl+Shift+p`, selecting `Run Task`, then selecting `Testing` should run tests (no tests present yet).
 
+#### FsUnit.XUnit
+
+Installation from the command line:
+
+```sh
+dotnet add package FsUnit.xUnit --version 3.0.0
+```
+
+New file `SimpleFsUnitTests.fs`:
+
+```fsharp
+module FsTests
+open Xunit
+open FsUnit.Xunit
+
+let add x y = x + y
+
+[<Fact>]
+let TrueIsTrue() =
+    true |> should equal true
+
+[<Fact>]
+let AddShouldWorkForSimpleExample() =
+    add 1 1 |> should equal 2
+```
+
+Patching `*fsproj`:
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="FsUnit.xUnit" Version="3.0.0" />
+    <PackageReference Include="xunit" Version="2.3.0-beta4-build3742" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta4-build3742" />
+    <Compile Include="SimpleXUnitTests.fs" />
+    <Compile Include="SimpleFsUnitTests.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  ```
+
+  
